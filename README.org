@@ -1,0 +1,22 @@
+#+STARTUP: showall
+#+TITLE: Some C Plus Plus
+#+SUBTITLE: CIS 310: Operating Systems
+#+AUTHOR: Brian C. Ladd
+#+DATE: Fall 2020
+
+* A Code Distribution Repository
+This repository contains sample code for SUNY Potsdam's CIS 310
+Operating Systems course offered in Fall 2020.
+
+It is a collection of C++ programs. Initially the programs do not use
+a =Makefile=; eventually they will be more complex and require build
+tools.
+
+** Subprojects
+- ParallelArraysInC++ :: A first C++ program. Uses a single file
+  application to track names paired with floating point
+  numbers. Included README.org presents an "assignment"; DESIGN.org is
+  the redame for the finished solution.
+
+  Code is in the =src= subdirectory and test files (a script and data
+  files) are in the =test= subdirectory.
