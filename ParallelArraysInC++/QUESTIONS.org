@@ -1,0 +1,8 @@
+#+STARTUP: showall
+#+TITLE: Names and Numbers: Code Review Questions
+#+SUBTITLE: CIS 310: Operating Systems
+#+AUTHOR: Brian C. Ladd
+#+DATE: Fall 2020
+
+1. In CS1 and CS2, we often say for loops are like while loops. So the
+   following would be the "same" as that beginnig at

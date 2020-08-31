@@ -1,0 +1,32 @@
+#+STARTUP: showall
+#+TITLE: Names and Numbers
+#+SUBTITLE: CIS 310: Operating Systems
+#+AUTHOR: Brian C. Ladd
+#+DATE: Fall 2020
+
+* Assignment
+Write a program that prompts the user for a collection of book titles
+and prices, storing the values in two /parallel arrays/. There will be
+a limit of 15 books.
+
+After reading in the data, the program will print out the array
+contents using a loop.
+
+* Interface
+You may choose how the user enters the information. Make sure to
+prompt the user with information so that they know when to type a
+string and when to type the (possibly multi-word) title.
+
+* Errors
+The user might enter an ill-formatted price (could be empty,
+too). Your program must not add that entry and recover to prompt
+again.
+
+The user might try to enter too many books. Your program should not
+prompt for a sixteenth book.
+
+* Testing
+Document your testing. Make testing as automatic as possible. This
+probably means writing input files and pairing them with good
+output. Make sure to include tests that check error handling and edge
+conditions.

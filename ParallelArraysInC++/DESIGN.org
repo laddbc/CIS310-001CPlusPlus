@@ -1,0 +1,51 @@
+#+STARTUP: showall
+#+TITLE: Names and Numbers
+#+SUBTITLE: CIS 310: Operating Systems
+#+AUTHOR: Brian C. Ladd
+#+DATE: Fall 2020
+
+* Assignment
+Write a program that prompts the user for a collection of book titles
+and prices, storing the values in two /parallel arrays/.
+
+After reading in the data, the program will print out the array
+contents using a loop.
+
+** Considerations
+*** C-style I/O:
+    - =printf= :: the formatted print function for output
+    - =fgets= :: file get string; the safest way to read a line.
+*** Sentinel-controlled input loop:
+    Title of "done" (case-sensitive) marks the end of input
+*** Hardwired array sizes:
+    The two arrays will be able to hold a maximum of 15 elements
+**** Need to track number of entries and forbid a 16th
+*** C-style strings:
+    The strings will be stored as null-terminate arrays.
+**** The use of standard C-string functions is permitted
+**** C-style strings must be allocated and copied by the programmer.
+     This means we will need to use =new=/=delete= (or =malloc=/=free=) to
+     allocate space for the character arrays on the heap.
+***** Do NOT forget space for the null byte
+*** How will the price and the title be separated?
+**** Could use two lines - easiest to process
+**** Could do "<price> <title>" on one line where price is first "word" - most like future assignments
+***** Start by finding first non-space, then first following space.
+***** Copy the substring and use =atof= (ASCII to float) to convert.
+****** What will it look like at the end of the input?
+***** The buffer position right after the last space we found is where the title lives.
+      A valid C-style string starts at that position.
+****** Get length of title, allocate space, copy title
+***** What could go wrong?
+****** Leading blanks: not an error. Accounted for in looking for first non-blank.
+****** Blank line: should not be an error. If find-non-blank hits end of line, continue to top of input loop
+****** Bad float formatting: an error in the input. What does =atof= do in that case?
+****** Price and no title: an error. If title is empty string, continue w/o insertion. If title is all blank, will insert it.
+**** Could put price at the end - more "challenging" string processing
+
+* Testing
+** The =test= directory contains test input, matching expected output, and a file to run all the tests.
+** In =test=, use the =bash= =source= command to copy the contents of =sourceToRunAll= as if you had typed it
+*** The file runs commands as the person who sourced it: *make sure you trust the source*. At least READ it.
+*** The file deletes the output file, runs the command with the given input, and then compares the output to expected output.
+** Names of input files correspond to what is being demonstrated.

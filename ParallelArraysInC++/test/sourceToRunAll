@@ -1,0 +1,15 @@
+rm -f simple.actual.out
+../src/NamesAndNumbers < simple.txt >simple.actual.out
+diff simple.expected.out simple.actual.out
+
+rm -f missingTitle.actual.out
+../src/NamesAndNumbers < missingTitle.txt >missingTitle.actual.out
+diff missingTitle.expected.out missingTitle.actual.out
+
+rm -f badPrice.actual.out
+../src/NamesAndNumbers < badPrice.txt >badPrice.actual.out
+diff badPrice.expected.out badPrice.actual.out
+
+rm -f fullArray.actual.out
+../src/NamesAndNumbers < fullArray.txt >fullArray.actual.out
+diff fullArray.expected.out fullArray.actual.out
